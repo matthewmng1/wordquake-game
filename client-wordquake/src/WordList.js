@@ -7,7 +7,11 @@ const WordList = ({wordList, wordErr, alert}) => {
         <thead className='word-list-header'>
           <tr>
             <th colSpan={3}
-            style={{ color: wordErr === 'error' ? 'red' : (wordErr === 'ok' ? 'springgreen' : 'black') }}
+            style={
+              { color: wordErr === 'error' ? 'red' : (wordErr === 'ok' ? 'springgreen' : 'black'),
+                backgroundColor: wordErr === 'error' ? '' : (wordErr === 'ok' ? 'darkslategray' : '') 
+              }
+            }
             className='word-list-header-alert'
             >{alert}</th>
           </tr>

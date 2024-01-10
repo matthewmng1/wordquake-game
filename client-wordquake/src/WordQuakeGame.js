@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import WordQuakeGameApi from './api'
 import { Board } from './Board'
+import Rules from './Rules'
 import WordList from './WordList'
 
 const WordQuakeGame = () => {
@@ -24,6 +25,10 @@ const WordQuakeGame = () => {
   const [wordList, setWordList] = useState([])
   const [alert, setAlert] = useState('...')
   const [wordErr, setWordErr] = useState(null)
+  const [shakeBoard, setShakeBoard] = useState(false); 
+  const [showRules, setShowRules] = useState(false)
+
+
 
   /**
    * Fetch a new game board
@@ -39,6 +44,10 @@ const WordQuakeGame = () => {
     }
     setScore(0);
     setWordList([])
+    setShakeBoard(true)
+    setTimeout(() => {
+      setShakeBoard(false);
+    }, 500); 
     setBoard(newBoard.board);
     console.log(board)
     setSeconds(120);
@@ -129,11 +138,25 @@ const WordQuakeGame = () => {
     }
   }
 
+  const displayRules = () => {
+    setShowRules(prevState => !prevState);
+  }
+
   let content;
   if(board){
     content = 
     <div className='main-container'>
       <div className='main-header'>
+        {showRules ? (
+            <div className='rules-popup' style={{ display: showRules ? "block" : "none"}}>
+            <Rules
+              toggleDisplay={() => displayRules()}
+            />
+          </div>
+        ) : 
+        (
+          <div className='rules-btn-div'><button onClick={() => displayRules()} className='rules-btn'>Rules</button></div> 
+        )}
         <h1>Word Quake!</h1>
         <h3>High Score: {topScore} </h3>
       </div>
@@ -152,7 +175,7 @@ const WordQuakeGame = () => {
               </div>
             </div>
             <div>
-              <div>
+              <div className={`${shakeBoard ? ' shake' : ''}`}>
                 <Board 
                   boardData={board}
                   handleSubmit={handleSubmit}
