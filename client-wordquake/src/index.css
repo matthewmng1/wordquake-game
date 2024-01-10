@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(to right, #7393b3 , #87c9df, #acffff);
+}
+
+.main-container{
+  height: 100vh;
+}
+
+.main-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-header h3{
+  margin-left: 5%;
+}
+
+.game-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%; 
+}
+
+.wordquake-main{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+  height: 75%;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+.wordquake-board-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 10px;
+  padding: 0 15px 0 15px;
+}
+
+
+.wordquake-board-top-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+
+.new-game-btn{
+  font-size: 1.5em;
+  border-radius: 4px;
+  margin-left: 10px;
+  background-color: transparent;
+  font-weight: 600;
+  border: 0px;
+}
+
+.new-game-btn:hover{
+  background-color: rgba(97, 233, 106, 0.5);
+}
+
+.timer, .score{
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.board-container{
+  font-size: 3em;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-color: rgba(225, 238, 237, 0.5);
+  border: 1px white solid;
+}
+
+.board-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.board-cell{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+}
+
+.board-inner-cell{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.word-input-live, .word-input-dead{
+  width: 35%;
+  padding: .2em;
+  font-size: 1.4em;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.word-input-dead{
+  color: red;
+  -webkit-text-stroke-width: .2px;
+  -webkit-text-stroke-color: white;
+  background-color: gray;
+  text-align: center;
+}
+
+.word-submit-btn{
+  font-size: 1em;
+  padding: .5em;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.word-list{
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: flex-start;
+  height: 75%;
+  border-radius: 20px;
+  background-color: transparent
+}
+
+.word-list-table{
+  margin-top: 10px;
+}
+
+.word-list-header-alert{
+  background-color: gray;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.word-list-header-title{
+  font-size: 2em;
+}
+
+.word-cell{
+  font-size: larger;
+  padding: 10px;
+}
