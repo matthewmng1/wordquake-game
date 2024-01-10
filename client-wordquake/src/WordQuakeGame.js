@@ -40,7 +40,7 @@ const WordQuakeGame = () => {
       setTopScore(score)
       localStorage.setItem('wordQuakeTopScore', score.toString());
       setWordErr('ok')
-      setAlert("New Top Score!")
+      setAlert("New High Score!")
     }
     setScore(0);
     setWordList([])
@@ -157,7 +157,7 @@ const WordQuakeGame = () => {
         (
           <div className='rules-btn-div'><button onClick={() => displayRules()} className='rules-btn'>Rules</button></div> 
         )}
-        <h1>Word Quake!</h1>
+        <h1>Word Quake</h1>
         <h3>High Score: {topScore} </h3>
       </div>
       <div className='game-container'>
